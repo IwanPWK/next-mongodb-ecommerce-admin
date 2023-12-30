@@ -14,11 +14,13 @@ export default function App({
   pageProps: { session, ...pageProps },
 }) {
   return (
-    <main className={`${inter.className}`}>
-      <SessionProvider session={session}>
+    <SessionProvider session={session}>
+      <main className={`${inter.className}`}>
         <Header />
-        <Component {...pageProps} />;
-      </SessionProvider>
-    </main>
+        <div className="min-h-screen max-w-screen-2xl mx-auto">
+          <Component {...pageProps} />
+        </div>
+      </main>
+    </SessionProvider>
   );
 }
